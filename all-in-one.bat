@@ -27,21 +27,37 @@ timeout /t 1 >nul
 start explorer.exe
 
 :: Install a list of apps using winget
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-"$apps = @(
-    @{Name='Discord';ID='Discord.Discord'},
-    @{Name='Spotify';ID='Spotify.Spotify'},
-    @{Name='Spicetify';ID='spicetify'},
-    @{Name='Telegram';ID='Telegram.TelegramDesktop'},
-    @{Name='Opera GX';ID='Opera.OperaGX'},
-    @{Name='7-Zip';ID='7zip.7zip'},
-    @{Name='Notepad++';ID='Notepad++.Notepad++'},
-    @{Name='Steam';ID='Valve.Steam'},
-    @{Name='Lightshot';ID='Skillbrains.Lightshot'}
-); foreach ($app in $apps) {
-    Write-Host \"Installing $($app.Name)...\";
-    winget install --id $($app.ID) -e --silent
-}; Write-Host '✅ Done!'"
+@echo off
+echo Installing applications...
+
+winget install --id Discord.Discord -e --silent
+echo Installed Discord.
+
+winget install --id Spotify.Spotify -e --silent
+echo Installed Spotify.
+
+winget install --id spicetify -e --silent
+echo Installed Spicetify.
+
+winget install --id Telegram.TelegramDesktop -e --silent
+echo Installed Telegram.
+
+winget install --id Opera.OperaGX -e --silent
+echo Installed Opera GX.
+
+winget install --id 7zip.7zip -e --silent
+echo Installed 7-Zip.
+
+winget install --id Notepad++.Notepad++ -e --silent
+echo Installed Notepad++.
+
+winget install --id Valve.Steam -e --silent
+echo Installed Steam.
+
+winget install --id Skillbrains.Lightshot -e --silent
+echo Installed Lightshot.
+
+echo ✅ Done!
 pause
 
 :: Disable Enhance Pointer Precision (mouse acceleration)

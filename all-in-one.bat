@@ -83,7 +83,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultU
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v DefaultPassword /t REG_SZ /d "YourPassword" /f
 
 :: Display message to the user
-echo Changes applied. Logging out in 10 seconds...
+echo Changes applied. Logging out in 3 seconds...
 timeout /t 3 /nobreak >nul
 
 :: Automatically log off and log back in
